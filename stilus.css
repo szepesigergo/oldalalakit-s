@@ -1,0 +1,146 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box; 
+}
+
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    background-color: rgb(22, 21, 21);
+    background-image: url("képek/háttér2.jpg");
+}
+
+main{
+    display: grid;
+    grid-template-columns: 300px 3fr 300px;
+    grid-template-areas: 
+        "h h h"
+        "n n n"
+        "b a j"
+        "f f f";
+}
+
+header{
+    grid-area: h;
+}
+
+article{
+    grid-area: a;
+}
+
+nav{
+    grid-area: n;
+}
+
+footer{
+    grid-area: f;
+}
+
+aside#bal{
+    grid-area: b;
+}
+
+aside#jobb{
+    grid-area: j;
+}
+
+aside#kozep{
+    grid-area: k;
+}
+
+header, nav, article, footer, aside{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "e m ha";
+    
+}
+
+div#elso{
+    grid-area: e;
+}
+
+div#masodik{
+    grid-area: m;
+}
+
+div#harmadik{
+    grid-area: ha;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li {
+    background-color: rgb(87, 185, 185);
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+article{
+    grid-template-columns: 1fr 1 1fr 1fr;
+    border: 1px solid black;
+}
+
+div#elso{
+    border: 1px solid white;
+}
+
+div#masodik{
+    border: 1px solid white;
+}
+
+div#harmadik{
+    border: 1px solid white;
+}
+
+img{
+    width: 100%;
+}
+
+
+
+@media only screen and (max-width: 450px) {/*töréspont*/
+    body, main {
+      /*background-color: rgb(230, 173, 200);*/
+      width: 100%;
+    }
+    main {
+        font-size: 12px+3vw;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "h"
+        "n"
+        "b" 
+        "a" 
+        "j"
+        "f";
+    }
+    nav ul {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    article{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "e"
+            "m"
+            "ha";
+        
+    }
+  }
